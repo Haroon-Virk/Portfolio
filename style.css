@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@100;300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    width: 100%;
+    display: flex;
+    
+}
+.name{
+    width: 100%;
+    height: 100vh;
+    font-size: larger;
+    line-height: 2.5;
+    padding: 20px;
+    margin-top: 100px;
+    font-weight: bolder;
+}
+mark{
+    /* color: #00b0b2; */
+    background: linear-gradient(to right, #00abb3, #00ccac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+
+}
+.one{
+    border: 2px solid #00b0b2;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    color: #00b0b2;
+    font-weight: bolder;
+    margin: 10px;
+}
+/* .one:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+} */
+.about{
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
+    background: linear-gradient(to right, #00abb3, #00ccac);
+    width: 100%;
+    padding: 20px;
+
+}
+.about h2{
+    color: white;
+}
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 50px;
+}
+.leftwrap, .rightwrap{
+    width: 50%;
+}
+.leftwrap img{
+    width: 300px;
+
+}
+.rightwrap{
+    color: white;
+    line-height: 1.5;
+    display: flex;
+    margin: 100px;
+    flex-direction: column;
+}
+.rightwrap p{
+    font-weight: lighter;
+}
+.two{
+    padding: 5px;
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 150px;
+    font-size: 12px;
+    color: white;
+    background-color: #00c2ae;
+    border: 2px solid white;
+    font-weight: bolder;
+}
+button:hover{
+    background-color: #00c2ae;
+    cursor: pointer;
+    color: white;
+}
+.two:hover{
+    background-color: white;
+    color: #00ccac;
+}
+.projects{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.proj0, .proj1, .proj2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 50px 0px;
+}
+.leftp0, .leftp1, .leftp2{
+    width: 30%;
+    
+}
+.rightp0, .rightp1, .rightp2{
+    width: 55%;
+    margin-left: 50px;
+}
+.rightp0 img{
+    width: 100%;
+}
+.leftp0 h4, .leftp1 h4, .leftp2 h4{
+    font-size: medium;
+    
+}
+.leftp0 p, .leftp1 p, .leftp2 p{
+    margin: 20px;
+    font-size: smaller;
+    line-height: 1.5;
+}
+.three, .four{
+    color: #00c2ae;
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bolder;
+    width: 100px;
+}
+.three{
+    border: 2px solid #00c2ae;
+}
+.four{
+    border: none;
+}
+.rightp1 img{
+    width: 100%;
+}
+
+.rightp2 img{
+    width: 100%;
+}
+.p2{
+    margin-top: 20px;
+}
+.contact{
+    clip-path: polygon(0 21%, 100% 0, 100% 100%, 0% 100%);
+    text-align: center;
+    background: linear-gradient(to right, #00abb3, #00ccac);
+    padding: 100px;
+    color: white;
+}
+.contact h2{
+    font-weight: 500;
+}
+.contact p{
+    font-weight: 100;
+}
+.five{
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+    border: 2px solid white;
+    font-weight: bold;
+    width: 150px;
+}
+.five:hover{
+    background-color: white;
+    color: #00ccac;
+}
+.footer{
+    width: 100%;
+    background-color: #333333;
+    text-align: center;
+}
+#Arrow{
+    margin-top: 50px;
+}
+.svgs{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 380px;
+    margin-top: 25px;
+}
+.foot{
+    width: 60%;
+    text-align: center;
+    margin-left: 250px;
+    margin-top: 25px;
+    font-size: xx-small;
+    color: white;
+    font-weight: 100;
+    padding: 10px;
+}
+
+#Arrow, #Twitter, #Git, #Link{
+    fill: white;
+    height: 20px;
+}
+#Arrow:hover{
+    transform: translateY(-20px);
+    cursor: pointer;
+    fill: burlywood;
+}
+#Twitter:hover{
+    fill: skyblue;
+    transform: rotate(30deg);
+    cursor: pointer;
+}
+#Link:hover{
+    fill: rgb(84, 191, 227);
+    cursor: pointer;
+    transform: scale(2);
+}
+#Git:hover{
+    fill: rgba(198, 198, 206, 0.152);
+    cursor: pointer;
+    
+
+}
+.svg, .star{
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    
+}
+.no, .No{
+    background-color: white;
+    margin: 1px;
+}
+.last{
+    padding: 50px;
+    font-size: smaller;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #3b222215;
+    /* justify-content: space-around; */
+    height: 100px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.header h1{
+    margin-left: 0px;
+    margin-top: 25px;
+}
+.lead{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.lead a{
+    color: black;
+    margin: 10px;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
