@@ -4,10 +4,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* background-color: whitesmoke; */
 }
 .container{
     width: 100%;
-    display: flex;
+    
     
 }
 .name{
@@ -23,8 +26,7 @@ mark{
     /* color: #00b0b2; */
     background: linear-gradient(to right, #00abb3, #00ccac);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-   
+    -webkit-text-fill-color: transparent; 
 
 }
 .one{
@@ -46,6 +48,7 @@ mark{
     background: linear-gradient(to right, #00abb3, #00ccac);
     width: 100%;
     padding: 20px;
+    
 
 }
 .about h2{
@@ -56,9 +59,11 @@ mark{
     flex-direction: row;
     width: 100%;
     padding: 50px;
+    flex-wrap: wrap;
 }
 .leftwrap, .rightwrap{
     width: 50%;
+    flex: 1 1 335px; 
 }
 .leftwrap img{
     width: 300px;
@@ -99,30 +104,31 @@ button:hover{
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
 }
-.proj0, .proj1, .proj2{
+.proj{
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 50px 0px;
 }
-.leftp0, .leftp1, .leftp2{
+.leftp{
     width: 30%;
     
 }
-.rightp0, .rightp1, .rightp2{
+.rightp{
     width: 55%;
     margin-left: 50px;
 }
-.rightp0 img{
+.rightp img{
     width: 100%;
 }
-.leftp0 h4, .leftp1 h4, .leftp2 h4{
+.leftp h4{
     font-size: medium;
     
 }
-.leftp0 p, .leftp1 p, .leftp2 p{
+.leftp p{
     margin: 20px;
     font-size: smaller;
     line-height: 1.5;
@@ -133,21 +139,18 @@ button:hover{
     padding: 10px;
     margin: 5px;
     font-weight: bolder;
-    width: 100px;
+    width: 150px;
+    
 }
 .three{
     border: 2px solid #00c2ae;
 }
 .four{
     border: none;
-}
-.rightp1 img{
-    width: 100%;
+    height: 40px;
+    margin-top: 0px;
 }
 
-.rightp2 img{
-    width: 100%;
-}
 .p2{
     margin-top: 20px;
 }
@@ -180,10 +183,10 @@ button:hover{
     width: 100%;
     background-color: #333333;
     text-align: center;
+    align-items: center;
+    
 }
-#Arrow{
-    margin-top: 50px;
-}
+
 .svgs{
     width: 40%;
     display: flex;
@@ -203,40 +206,49 @@ button:hover{
     padding: 10px;
 }
 
-#Arrow, #Twitter, #Git, #Link{
+.footer svg{
     fill: white;
     height: 20px;
+    
 }
-#Arrow:hover{
+.Arrow{
+    margin-top: 50px;
+
+}
+.Arrow:hover{
     transform: translateY(-20px);
     cursor: pointer;
     fill: burlywood;
 }
-#Twitter:hover{
+.Twitter:hover{
     fill: skyblue;
     transform: rotate(30deg);
     cursor: pointer;
 }
-#Link:hover{
+.Link:hover{
     fill: rgb(84, 191, 227);
     cursor: pointer;
     transform: scale(2);
 }
-#Git:hover{
+.Git:hover{
     fill: rgba(198, 198, 206, 0.152);
     cursor: pointer;
     
 
 }
-.svg, .star{
+.fork, .star{
     background-color: lightgrey;
     color: black;
     border: none;
-    
+    padding: 5px;
+}
+.fork svg, .star svg{
+    height: 12px;
+    fill: black;
 }
 .no, .No{
     background-color: white;
-    margin: 1px;
+    padding: 5px;
 }
 .last{
     padding: 50px;
@@ -247,14 +259,21 @@ button:hover{
     flex-direction: row;
     width: 100%;
     background-color: #3b222215;
-    /* justify-content: space-around; */
     height: 100px;
     position: sticky;
-    top: 0;
-    left: 0;
+    top: 0px;
+    
 }
+
+.header:hover{
+    color: green;
+}
+.lead a:hover{
+    color: green;
+}
+
 .header h1{
-    margin-left: 0px;
+    margin-left: 50px;
     margin-top: 25px;
 }
 .lead{
