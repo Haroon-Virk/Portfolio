@@ -9,7 +9,7 @@
     /* margin: 20px; */
     text-align: center;
     padding: 20px;
-    background-color: #00ccac;
+    background: linear-gradient(to right, #00abb3, #00ccac);
 
 }
 .information-box{

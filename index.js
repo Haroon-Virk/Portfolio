@@ -5,6 +5,7 @@ if (storedUsers){
 }
 let currentuser;
 
+
 function signup(event){
     event.preventDefault();
     const name = document.getElementById('name').value
@@ -44,6 +45,7 @@ function login(event){
         console.log(users)
         console.log(currentuser);
         window.location.href = 'profile.html';
+
     }
     else{
         alert('Login Unsuccessful')
@@ -98,3 +100,24 @@ function saveProjectdata(event){
     
 }
 document.getElementById('form').addEventListener('submit', saveProjectdata)
+
+console.log(users)
+function viewuser(event){
+    event.preventDefault();
+    const usercontainer = document.getElementById('container');
+    for (let i = 0; i < users.length; i++){
+        const user = users[i];
+
+        const userdiv = document.createElement('div');
+        userdiv.className = 'wrapper'
+        userdiv.innerHTML = 
+        `<div class='na'><h4>Name: ${user.name}</h4></div>
+         <div class='em'><h4>Email: ${user.email}</h4></div>
+         <div class='na'><h4>Number: ${user.number}</h4></div>
+         <div class='na'><h4>Password: ${user.password}</h4></div>
+         `
+
+         usercontainer.appendChild(userdiv);
+    }
+    
+}
