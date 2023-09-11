@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+    <link rel="stylesheet" href="Project.css">
+    <script src="index.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <form id="form" onsubmit="saveProjectdata(event)">
+                <div class="title">
+                    <label for="Title">Title</label>
+                    <input type="text" class="text" id="title" placeholder="Enter Project Title">
+                </div>
+                <div class="image">
+                    <label for="image">Upload an Image</label>
+                    <input type="file" id="image" name="image" accept="image/">
+                    <input type="submit" value="Upload Image">
+                </div>
+                <div class="description">
+                    <label for="description">Description</label>
+                    <textarea class="des" name="description" id="description" cols="50" rows="10"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    /* margin: 20px; */
+    text-align: center;
+    padding: 20px;
+    background-color: #00ccac;
+
+}
+.information-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.Project{
+    padding: 20px;
+    border: 1px solid;
+    margin: 10px;
+    background-color: #00c2ae;
+}
+.Project a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: red;
+    cursor: pointer;
+}
+.link{
+    margin: 10px;
+}
