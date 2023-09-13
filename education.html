@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="skills.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <header><h1>Add Education</h1></header>
+        <form id="education" onsubmit="saveeducation(event)">
+            <div class="information">
+                <div class="add degree">
+                    <label for="degree">Add your highest degree</label>
+                    <input class="text" type="text" id="degree" placeholder="Add degree">
+                </div>
+                <div class="add uni">
+                    <label for="university">Add University/Institue Name</label>
+                    <input class="text" type="text" id="university" placeholder="Add university/institute">
+                </div>
+                <div class="add other">
+                    <label for="Other">Add Other Certificates or Bootcamp</label>
+                    <input class="text" type="text" id="other" placeholder="Add Other certificates">
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+
+    </form>
+    </div>
+</body>
+</html>

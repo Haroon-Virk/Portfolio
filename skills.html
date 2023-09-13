@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="skills.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <header><h1>Add Skills</h1></header>
+        <form id="skillset" onsubmit="saveskills(event)">
+            <div class="information">
+                <div class="add lang">
+                    <label for="Languages">Add Languages you Know</label>
+                    <input class="text" type="text" id="language" placeholder="Add Languages">
+                </div>
+                <div class="add frame">
+                    <label for="Frameworks">Add Frameworks you know</label>
+                    <input class="text" type="text" id="framework" placeholder="Add Frameworks">
+                </div>
+                <div class="add other">
+                    <label for="Other">Add Other Skills</label>
+                    <input class="text" type="text" id="other" placeholder="Add Other Skills">
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+
+    </form>
+    </div>
+</body>
+</html>

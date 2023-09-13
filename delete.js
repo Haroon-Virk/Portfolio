@@ -25,12 +25,18 @@ document.addEventListener('DOMContentLoaded', function(){
                     projectimgelement.className = 'image';
                     projectimgelement.src = project.image
 
-                        
+                    const deletebutton = document.createElement('button')
+                    deletebutton.className = 'del'
+                    deletebutton.textContent = 'Delete'
+                    deletebutton.addEventListener('click', () => {
+                        deleteproject(project.id);
+                    })
+
     
                     projectdiv.appendChild(projecttitleelement)
                     projectdiv.appendChild(projectdescripelement)
                     projectdiv.appendChild(projectimgelement)
-    
+                    projectdiv.appendChild(deletebutton)
                     projectcontainer.appendChild(projectdiv);
     
                 })
@@ -42,5 +48,45 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     
 })
+console.log(projects)
 
 
+
+
+function deleteproject(projectid){
+    const storedprojects = localStorage.getItem('projects')
+if(storedprojects){
+    projects = JSON.parse(storedprojects)
+    console.log(storedprojects)
+}
+const storedcurrentuser = localStorage.getItem('currentuser')
+if (storedcurrentuser){
+    currentuser = JSON.parse(storedcurrentuser)
+    console.log(currentuser)
+    if (!currentuser){
+        alert('You must be logged in')
+    }
+}
+const storedUsers = localStorage.getItem('users');
+if (storedUsers){
+    users = JSON.parse(storedUsers)
+    console.log(users)
+}
+    const userIndex = users.findIndex(user => user.email === currentuser.email)
+    if (userIndex >= 0){
+        const projectIndex = users[userIndex].projects.findIndex(project => project.id === projectid)
+        console.log(projectIndex)
+        if (projectIndex >= 0){
+            currentuser.projects.splice(projectIndex, 1)
+            users[userIndex] = currentuser
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('currentuser', JSON.stringify(currentuser))
+
+            alert('Project deleted succesfully')
+            window.location.href = 'delete.html'
+        }
+        else{
+            alert('project not founded')
+        }
+    }
+}
