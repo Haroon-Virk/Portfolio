@@ -1,50 +1,100 @@
-let users = []; // Array to store user data
+document.addEventListener('DOMContentLoaded', function(){
+  const storedUsers = localStorage.getItem('users');
+  if (storedUsers){
+    users = JSON.parse(storedUsers)
+  }
+  function allusers(event){
+    // event.preventDefault();
+    const usercontainer = document.getElementById('usercontainer')
+    usercontainer.innerHTML = '';
 
-// Check if user data exists in local storage and load it
-const storedUsers = localStorage.getItem('users');
-if (storedUsers) {
-  users = JSON.parse(storedUsers);
-}
+    users.forEach((user, userIndex) => {
+      let userdiv = document.createElement('div')
+      userdiv.className = 'user';;
 
-// Function to register a new user
-function registerUser() {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+      const username = document.createElement('h4')
+      username.className = 'userr'
+      // userNumber.textContent = userIndex
+      username.textContent = user.name
 
-  // Check if the email is already registered
-  const existingUser = users.find((user) => user.email === email);
-  if (existingUser) {
-    alert('User with this email already exists.');
-    return;
+
+      const userEmail = document.createElement('h4')
+      userEmail.className = 'userr'
+      userEmail.textContent = user.email
+
+      const userNumber = document.createElement('h4')
+      userNumber.className = 'userr'
+      userNumber.textContent = user.number
+
+      const userPassword =  document.createElement('h4')
+      userPassword.className = 'userr'
+      userPassword.textContent = user.password
+      let userskills = document.createElement('h4')
+      users.forEach((user) => {
+        const skills = user.skills;
+        user.skills.forEach((skill) => {
+        userskills.innerHTML = `Skills: ${skill.language} 
+          ${skill.framework} 
+          ${skill.other}`
+        
+        });
+      });
+
+      let usereducation = document.createElement('h4')
+      users.forEach((user) => {
+        const education = user.education
+        user.education.forEach((educate) => {
+          usereducation.innerHTML = `Education: ${educate.degree}
+          ${educate.university}
+          ${educate.other}`
+        });
+       
+      })
+      const deletebut = document.createElement('button')
+      deletebut.className = 'del'
+      deletebut.textContent = 'Delete'
+      deletebut.addEventListener('click', () => {
+        deleteuser(user.name);
+    })
+      
+      userdiv.appendChild(username)
+      userdiv.appendChild(userEmail)
+      userdiv.appendChild(userNumber)
+      userdiv.appendChild(userPassword)
+      userdiv.appendChild(userskills)
+      userdiv.appendChild(usereducation)
+      userdiv.appendChild(deletebut)
+      usercontainer.appendChild(userdiv)
+
+      
+    });
+
+      
+
+
+    }
+    allusers();
+
+})
+
+function deleteuser(username){
+  storedUsers = localStorage.getItem('users')
+  if (storedUsers){
+    users = JSON.parse(storedUsers)
+    console.log(users)
   }
 
-  // Add the new user to the array
-  users.push({ name, email, password });
-
-  // Save the updated user data to local storage
-  localStorage.setItem('users', JSON.stringify(users));
-
-  // Clear the registration form
-  document.getElementById('form').reset();
-
-  alert('Registration successful! You can now log in.');
-}
-
-// Function to log in a user
-function loginUser() {
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-
-  // Find the user by email
-  const user = users.find((user) => user.email === email);
-
-  if (user && user.password === password) {
-    alert('Login successful!');
-  } else {
-    alert('Invalid email or password. Please try again.');
+  const userIndex = users.findIndex(user => username === user.name)
+  console.log(userIndex)
+  if (userIndex){
+    users.splice(userIndex,1)
+    localStorage.setItem('users', JSON.stringify(users));
+    alert('User deleted successfully')
+    window.location.href = 'admuser.html'
+  }
+  else{
+    alert('User not founded')
   }
 
-  // Clear the login form
-  document.getElementById('form').reset();
+
 }

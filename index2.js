@@ -334,3 +334,46 @@ function deleteproject(projectid){
         }
     }
 }
+
+
+function write(event){
+    event.preventDefault()
+    console.log(currentuser.name)
+   
+    // const userNameElement = document.getElementById('username')
+    const userProjectElement = document.getElementById('Projects')
+    if (userProjectElement){
+        console.log('Project id found')
+    }
+    else{
+        console.log('PRoject id not found')
+    }
+
+    // if (userNameElement){
+    //     userNameElement.textContent = currentuser.name
+    //     console.log(userNameElement)
+    // }
+    // else{
+    //     alert('No user with that id found')
+    // }
+        
+        
+        if (currentuser && currentuser.projects.length > 0){
+            for (const project of currentuser.projects){
+                console.log(project)
+                const projectElement = document.createElement('div');
+                userProjectElement.innerHTML = '' //For clearing previous content
+                `<h4> ${project.title}</h4>
+                <p> ${project.description}</p>
+                <img src = ${project.image}/>`    
+                userProjectElement.appendChild(projectElement)
+
+            }
+
+        }
+    
+
+}
+
+document.addEventListener('DOMContentLoaded', write)
+// document.getElementById('cont').addEventListener('click', write)

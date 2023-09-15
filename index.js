@@ -4,6 +4,7 @@ const storedUsers = localStorage.getItem('users');
 if (storedUsers){
     users = JSON.parse(storedUsers)
 }
+
 let currentuser = [];
 
 
@@ -42,18 +43,34 @@ function login(event){
     event.preventDefault();
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-    const user = users.find((user) => user.email === email); 
-    if (user && user.password === password){
-        currentuser = user;
-        localStorage.setItem('currentuser', JSON.stringify(currentuser));
+    const storedUsers = localStorage.getItem('users');
+    if (storedUsers){
+        users = JSON.parse(storedUsers)
+        console.log(typeof users);
         console.log(users)
-        console.log(currentuser);
-        window.location.href = 'profile.html';
-
+    }
+    let adminemail = 'admin@gmail.com'
+    let adminpass = 'admin'
+    if (adminemail === email && adminpass === password){
+        window.location.href = 'admin.html'
+        alert('admin login successful')
     }
     else{
-        alert('Login Unsuccessful')
+        const user = users.find((user) => user.email === email); 
+        if (user && user.password === password){
+            currentuser = user;
+            localStorage.setItem('currentuser', JSON.stringify(currentuser));
+            console.log(currentuser);
+            alert('Login Successful')
+            window.location.href = 'profile.html'
+        
+        }
+        else{
+            alert('Login Unsuccessful')
+        }
     }
+   
+   
 }
 
 let projects = [];
@@ -264,4 +281,24 @@ function updateuser(event){
 
 }
 document.getElementById('update').addEventListener('submit', updateuser)
+
+function adminlogin(event){
+    event.preventDefault();
+    let adminemail = 'admin@gmail.com'
+    let adminpass = 'admin'
+
+    const adminem = document.getElementById('email').value
+    const adminpa = document.getElementById('password').value
+
+    if (adminem === adminemail && adminpa === adminpass){
+        alert('Admin Login Successful')
+        window.location.href = 'admin.html'
+    }
+    else{
+        alert('Wrong credentials')
+    }
+    document.getElementById('form').reset()
+}
+document.getElementById('form').addEventListener('submit', adminlogin)
+
 

@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="admin.css">
-    <script src="index.js"></script>
+    <script src="search.js"></script>
 </head>
 <body>
     <div class="container">
         <header><h1>Admin Module</h1></header>
-        <form class="form" id="form">
-            <input class="input" type="text" placeholder="Search.." name="search">
-            <button class="svg" type="submit"><img src="/assets/glass.svg" alt="" ></button>
+        <form class="form" id="formsearch">
+            <input class="input" id="search" type="text" placeholder="Search.." name="search">
+            <button class="svg"  type="submit" onclick="search(event)"><img src="/assets/glass.svg" alt="" ></button>
         </form>
         <div class="wrapper">
             <div class="view">
-                <a href="user.html" ><h3>View User</h3></a>
+                <a href="admuser.html" ><h3>View User</h3></a>
             </div>
             <div class="view">
-                <a href=""><h3>View Projects</h3></a>
+                <a href="allproj.html"><h3>View Projects</h3></a>
             </div>
             <div class="view">
                 <a href="su.html"><h3>Create User</h3></a>
             </div>
             <div class="view">
                 <a href=""><h3>Create Admin</h3></a>
+            </div>
+            <div class="view">
+                <a href=""><h3>Update User</h3></a>
             </div>
         </div>
     </div>
